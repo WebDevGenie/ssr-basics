@@ -19,9 +19,10 @@ jest.mock("next/router", () => ({
 }));
 
 describe("Posts", () => {
+  // Check if slug is in document
   it("should render the correct slug", () => {
     const slug = "test-slug";
-    const { getByText } = render(<Posts slug={slug} />);
+    const { getByText } = render(<Posts />);
     const header = getByText(slug);
 
     expect(header).toBeInTheDocument();

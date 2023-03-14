@@ -19,8 +19,6 @@ export default function Home() {
   //   },
   // ]);
 
-  const [slug, setSlug] = useState<PostsInterface[]>([{ slug: "my-slug" }]);
-
   return (
     <>
       <Head>
@@ -32,7 +30,7 @@ export default function Home() {
       <main className={styles.main}>
         <section className="main-section">
           <h1>Welcome to SSR Basics!</h1>
-          <Posts slug={slug} />
+          <Posts />
         </section>
       </main>
     </>
