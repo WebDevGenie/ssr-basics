@@ -1,3 +1,31 @@
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  height: 100vh;
+}
+.page h1 {
+  font-size: 4rem;
+  transition: 0.4s all;
+  color: rgb(0, 46, 172);
+}
+.page h1:hover {
+  font-size: 4.5rem;
+  color: red;
+}
+.page h1::before {
+  content: "I am ";
+}
+.page p {
+  font-weight: 600;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.slug-form {
+  display: block;
 }/*# sourceMappingURL=globals.css.map */
