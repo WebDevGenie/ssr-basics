@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Posts from "./posts/[slug]";
 import { useState } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,13 +11,13 @@ export interface PostsInterface {
 }
 
 export default function Home() {
-  // const [posts, setPosts] = useState<PostsInterface[]>([
-  //   {
-  //     id: 1,
-  //     heading: "Amit",
-  //     content: "I am the content",
-  //   },
-  // ]);
+  // Slug input
+  const [slug, setSlug] = useState("");
+
+  // Handle GoTo Button
+  function handleGo() {
+    window.location.href = "/posts/" + slug;
+  }
 
   return (
     <>
@@ -30,7 +30,20 @@ export default function Home() {
       <main className={styles.main}>
         <section className="main-section">
           <h1>Welcome to SSR Basics!</h1>
-          <Posts />
+          <Link href={"/posts/Amit"}>Example Page (Amit)</Link>
+          <div className="slug-form">
+            <div>Enter your own slug</div>
+            <input
+              type="text"
+              placeholder="slug"
+              onChange={(e) => setSlug(e.target.value)}
+              value={slug}
+              className="slug-input"
+            />
+            <button type="button" onClick={handleGo}>
+              Go To
+            </button>
+          </div>
         </section>
       </main>
     </>
